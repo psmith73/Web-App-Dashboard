@@ -480,7 +480,7 @@ if (lastSelected) {
   timeZone.value = lastSelected;
 }
 
-timeZone.addEventListener("change", (e) => {
+timeZone.addEventListener("click", (e) => {
   lastSelected = timeZone.options[timeZone.selectedIndex].value;
   localStorage.setItem("select", lastSelected);
 });
@@ -493,7 +493,7 @@ if(data) {
   togBtn.checked = true;
 }
 
-togBtn.addEventListener("change", (e) => { 
+togBtn.addEventListener("click", (e) => { 
  localStorage.setItem("togBtn", togBtn.checked);
 });
 
@@ -501,8 +501,20 @@ if(data1) {
   togBtn2.checked = true;
 }
 
-togBtn2.addEventListener("change", (e) => { 
+togBtn2.addEventListener("click", (e) => { 
 
   localStorage.setItem("togBtn2", togBtn2.checked);
 
 });
+
+//Reset Settings
+const cancelButton = document.querySelector(".cancel-btn");
+
+cancelButton.addEventListener("click", e => {
+  localStorage.removeItem("timezone");
+  localStorage.removeItem("email");
+  localStorage.removeItem("public");
+  document.querySelector("#tog-btn").checked = false;
+  document.querySelector("#tog-btn2").checked = false;
+  document.querySelector("#timezone").value = timeZone;
+})
