@@ -511,9 +511,9 @@ togBtn2.addEventListener("click", (e) => {
 const cancelButton = document.querySelector(".cancel-btn");
 
 cancelButton.addEventListener("click", e => {
-  localStorage.removeItem("timezone");
   localStorage.removeItem("email");
   localStorage.removeItem("public");
+  localStorage.removeItem("timezone");
   document.querySelector("#tog-btn").checked = false;
   document.querySelector("#tog-btn2").checked = false;
   document.querySelector("#timezone").value = timeZone;
