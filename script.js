@@ -480,7 +480,7 @@ if (lastSelected) {
   timeZone.value = lastSelected;
 }
 
-timeZone.addEventListener("click", (e) => {
+timeZone.addEventListener("change", (e) => {
   lastSelected = timeZone.options[timeZone.selectedIndex].value;
   localStorage.setItem("select", lastSelected);
 });
@@ -505,6 +505,16 @@ togBtn2.addEventListener("click", (e) => {
 
   localStorage.setItem("togBtn2", togBtn2.checked);
 
+});
+
+//Save Settings
+const saveBtn = document.querySelector("#save"); 
+
+saveBtn.addEventListener("click", (e) => {
+  lastSelected = timeZone.options[timeZone.selectedIndex].value;
+  localStorage.setItem("select", lastSelected);
+  localStorage.setItem("togBtn", togBtn.checked);
+  localStorage.setItem("togBtn2", togBtn2.checked);
 });
 
 //Reset Settings
