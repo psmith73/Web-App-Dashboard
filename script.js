@@ -527,4 +527,4 @@ cancelButton.addEventListener("click", e => {
   document.querySelector("#tog-btn").checked = false;
   document.querySelector("#tog-btn2").checked = false;
   document.querySelector("#timezone").value = timeZone;
-})
+});
